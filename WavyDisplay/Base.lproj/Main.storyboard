@@ -75,13 +75,38 @@
                     <view key="view" contentMode="scaleToFill" id="kFK-yI-SJ2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RqH-AN-0KE">
+                                <rect key="frame" x="12" y="100" width="390" height="750"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZQ-5J-Dmu">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="307"/>
+                                        <connections>
+                                            <segue destination="uiP-QC-zf4" kind="embed" identifier="DisplayAlbumsSegue" id="iLm-1p-fRa"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-j5-vFV">
+                                        <rect key="frame" x="0.0" y="295" width="390" height="431"/>
+                                        <connections>
+                                            <segue destination="7gU-yv-oNU" kind="embed" id="qfR-Gf-jun"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RqH-AN-0KE" firstAttribute="leading" secondItem="hgv-xK-aTU" secondAttribute="leading" constant="12" id="4Zn-vA-NHP"/>
+                            <constraint firstItem="RqH-AN-0KE" firstAttribute="top" secondItem="hgv-xK-aTU" secondAttribute="top" constant="12" id="7l0-V1-VFG"/>
+                            <constraint firstItem="hgv-xK-aTU" firstAttribute="bottom" secondItem="RqH-AN-0KE" secondAttribute="bottom" constant="12" id="CEw-Qb-kFd"/>
+                            <constraint firstItem="hgv-xK-aTU" firstAttribute="trailing" secondItem="RqH-AN-0KE" secondAttribute="trailing" constant="12" id="SRd-ls-xtU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hgv-xK-aTU"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHN-cb-AK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1891" y="112"/>
+            <point key="canvasLocation" x="1889.8550724637682" y="111.83035714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ose-f9-92V">
@@ -100,6 +125,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xb3-x0-KJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="56.521739130434788" y="113.83928571428571"/>
+        </scene>
+        <!--Albums View Controller-->
+        <scene sceneID="oAr-2O-oR8">
+            <objects>
+                <viewController id="uiP-QC-zf4" customClass="AlbumsViewController" customModule="WavyDisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m8j-L0-jaN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="307"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFA-0B-bdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2761" y="-51"/>
+        </scene>
+        <!--Posts View Controller-->
+        <scene sceneID="NaU-bY-GU5">
+            <objects>
+                <viewController id="7gU-yv-oNU" customClass="PostsViewController" customModule="WavyDisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1yE-Zz-vkJ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdK-89-8JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2761" y="254"/>
         </scene>
     </scenes>
 </document>
