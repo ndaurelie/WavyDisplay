@@ -128,6 +128,8 @@ class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    // MARK: - Collection View Data Source
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return photosByAlbum.count
     }
@@ -146,6 +148,24 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return albumCell
         } else {
             return cell
+        }
+    }
+    
+    // MARK: - Collection View Headers
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "albumsHeaderview", for: indexPath) as? AlbumsHeaderView else {
+                fatalError("Invalid view type")
+            }
+            
+            let albumTitle = photosByAlbum[indexPath.section].album.title
+            headerView.albumsHeaderLabel.text = albumTitle
+            return headerView
+            
+        } else {
+            assert(false, "Invalid element type")
         }
     }
     
