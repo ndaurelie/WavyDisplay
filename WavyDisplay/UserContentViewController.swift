@@ -39,6 +39,13 @@ class UserContentViewController: UIViewController {
             }
         }
         
+        if segue.identifier == "DisplayPostsSegue" {
+            if let postsVC = segue.destination as? PostsViewController {
+                if chosenUser != nil {
+                    postsVC.currentUser = chosenUser
+                }
+            }
+        }
         
     }
     
