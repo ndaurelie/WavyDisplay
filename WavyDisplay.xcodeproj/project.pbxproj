@@ -14,6 +14,7 @@
 		527F83FC22B8E3C30045E58D /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F83FB22B8E3C30045E58D /* Geo.swift */; };
 		527F83FE22B8E4060045E58D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F83FD22B8E4060045E58D /* Address.swift */; };
 		527F840022B8E44B0045E58D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F83FF22B8E44B0045E58D /* User.swift */; };
+		527F840222B8EA290045E58D /* UserContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F840122B8EA290045E58D /* UserContentViewController.swift */; };
 		52C7890622B8D40B00E518B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7890522B8D40B00E518B2 /* AppDelegate.swift */; };
 		52C7890B22B8D40B00E518B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C7890922B8D40B00E518B2 /* Main.storyboard */; };
 		52C7890D22B8D40C00E518B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C7890C22B8D40C00E518B2 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		527F83FB22B8E3C30045E58D /* Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
 		527F83FD22B8E4060045E58D /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		527F83FF22B8E44B0045E58D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		527F840122B8EA290045E58D /* UserContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentViewController.swift; sourceTree = "<group>"; };
 		52934F0C30FD97657E1C173F /* Pods-WavyDisplayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WavyDisplayTests.debug.xcconfig"; path = "Target Support Files/Pods-WavyDisplayTests/Pods-WavyDisplayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		52C7890222B8D40B00E518B2 /* WavyDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WavyDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C7890522B8D40B00E518B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				527F83FF22B8E44B0045E58D /* User.swift */,
 				527F83FB22B8E3C30045E58D /* Geo.swift */,
 				52C7890922B8D40B00E518B2 /* Main.storyboard */,
+				527F840122B8EA290045E58D /* UserContentViewController.swift */,
 				52C7890C22B8D40C00E518B2 /* Assets.xcassets */,
 				52C7890E22B8D40C00E518B2 /* LaunchScreen.storyboard */,
 				52C7891122B8D40C00E518B2 /* Info.plist */,
@@ -403,6 +406,7 @@
 				527F840022B8E44B0045E58D /* User.swift in Sources */,
 				527F83FA22B8E38F0045E58D /* Company.swift in Sources */,
 				527F83FC22B8E3C30045E58D /* Geo.swift in Sources */,
+				527F840222B8EA290045E58D /* UserContentViewController.swift in Sources */,
 				527F83FE22B8E4060045E58D /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
