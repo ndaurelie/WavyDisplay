@@ -8,8 +8,11 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class AlbumsViewController: UIViewController {
+    
+    // We display photos by a user - each section represents an album
     
     struct Constant {
         static let baseUrlString = "https://jsonplaceholder.typicode.com"
@@ -27,44 +30,85 @@ class AlbumsViewController: UIViewController {
     
     var albumsForThisUser: [Album]?
     
+    // This var is used for the data source of the collection view :
     var photosByAlbum = [PhotoAlbum]()
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var albumsCollectionView: UICollectionView! {
+        didSet {
+            albumsCollectionView.delegate = self
+            albumsCollectionView.dataSource = self
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if currentUser != nil {
-            print("I should get albums of user with userId \(currentUser!.id)")
-            let requestString = Constant.baseUrlString + Constant.pathForAlbumsHavingUserId + String(currentUser!.id)
-            print("My request string is: ", requestString)
+        let photosRequestString = Constant.baseUrlString + Constant.pathForAllPhotos
+        
+        Alamofire.request(photosRequestString).responseJSON { responseP in
             
-            Alamofire.request(requestString).responseJSON { response in
+            if let dataP = responseP.data {
                 
-                if let data = response.data {
+                do {
+                    let allPhotos = try JSONDecoder().decode(Array<Photo>.self, from: dataP)
                     
-                    do {
-                        let result = try JSONDecoder().decode(Array<Album>.self, from: data)
-                        self.albumsForThisUser = result
+                    if self.currentUser != nil {
+                        print("I should get albums of user with userId \(self.currentUser!.id)")
+                        let requestString = Constant.baseUrlString + Constant.pathForAlbumsHavingUserId + String(self.currentUser!.id)
+                        print("My request string is: ", requestString)
                         
-                        if let albumsId = self.albumsForThisUser?.map({ $0.id }) {
+                        Alamofire.request(requestString).responseJSON { response in
                             
-                            for albumId in albumsId {
+                            if let data = response.data {
                                 
-                                print("I should get photos having this album id: ", albumId)
+                                do {
+                                    let result = try JSONDecoder().decode(Array<Album>.self, from: data)
+                                    self.albumsForThisUser = result
+                                    
+                                    // For each album of this user, we gather all photos of this album
+                                    for thisAlbum in result {
+                                        
+                                        var photosForThisAlbum = [Photo]()
+                                        
+                                        for photo in allPhotos {
+                                            if photo.albumId == thisAlbum.id {
+                                                photosForThisAlbum.append(photo)
+                                            }
+                                        }
+                                        let photoAlbum = PhotoAlbum(album: thisAlbum, photos: photosForThisAlbum)
+                                        self.photosByAlbum.append(photoAlbum)
+                                        
+                                        
+                                        DispatchQueue.main.async {
+                                            self.albumsCollectionView.reloadData()
+                                        }
+                                        
+                                    }
+
+                                    
+                                } catch {
+                                    print("Error serializing Album JSON: ", error)
+                                }
+                                
                             }
                             
                         }
                         
-                        
-                        
-                    } catch {
-                        print("Error serializing Album JSON: ", error)
                     }
                     
+                    
+                    
+                } catch {
+                    print("Error serializing photos JSON: ", error)
                 }
                 
             }
-            
         }
+        
+        
         
         
     }
@@ -80,4 +124,27 @@ class AlbumsViewController: UIViewController {
     }
     */
 
+}
+
+extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return photosByAlbum.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photosByAlbum[section].photos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath)
+        
+        // TODO: Customize cells and display a photo in each cell.
+        cell.backgroundColor = UIColor.blue
+        
+        
+        return cell
+    }
+    
+    
 }
