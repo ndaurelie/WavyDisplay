@@ -86,7 +86,7 @@
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-j5-vFV">
-                                        <rect key="frame" x="0.0" y="295" width="390" height="431"/>
+                                        <rect key="frame" x="0.0" y="319" width="390" height="431"/>
                                         <connections>
                                             <segue destination="7gU-yv-oNU" kind="embed" id="qfR-Gf-jun"/>
                                         </connections>
@@ -138,19 +138,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="307"/>
                                 <color key="backgroundColor" white="1" alpha="0.9510648544520548" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C8q-AJ-m1E">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCell" id="pkQ-pS-IYQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCell" id="pkQ-pS-IYQ" customClass="PhotoCollectionViewCell" customModule="WavyDisplay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BMQ-Rm-Tal">
+                                                    <rect key="frame" x="8" y="8" width="104" height="104"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="BMQ-Rm-Tal" secondAttribute="bottom" id="7u8-wg-udI"/>
+                                            <constraint firstItem="BMQ-Rm-Tal" firstAttribute="top" secondItem="pkQ-pS-IYQ" secondAttribute="top" constant="8" id="aru-VP-7vF"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="BMQ-Rm-Tal" secondAttribute="trailing" id="eUC-ba-cIu"/>
+                                            <constraint firstItem="BMQ-Rm-Tal" firstAttribute="leading" secondItem="pkQ-pS-IYQ" secondAttribute="leadingMargin" id="jml-Bb-9sO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="BMQ-Rm-Tal" id="OIs-2a-lad"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -162,6 +176,7 @@
                             <constraint firstAttribute="trailing" secondItem="F3z-OG-hnJ" secondAttribute="trailing" id="LNH-TQ-jYC"/>
                             <constraint firstItem="F3z-OG-hnJ" firstAttribute="leading" secondItem="m8j-L0-jaN" secondAttribute="leading" id="mtE-IC-3Nu"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="fZ6-qD-Q6t"/>
                     </view>
                     <connections>
                         <outlet property="albumsCollectionView" destination="F3z-OG-hnJ" id="K2E-al-FyM"/>
@@ -179,6 +194,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="0.94991438356164382" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8yz-Ql-M6B"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdK-89-8JR" userLabel="First Responder" sceneMemberID="firstResponder"/>

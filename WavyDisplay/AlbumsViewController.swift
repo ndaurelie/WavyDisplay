@@ -139,12 +139,14 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath)
         
-        // TODO: Customize cells and display a photo in each cell.
-        cell.backgroundColor = UIColor.blue
-        
-        
-        return cell
+        // Customize cells and display a photo in each cell.
+        if let albumCell = cell as? PhotoCollectionViewCell {
+            let urlString = photosByAlbum[indexPath.section].photos[indexPath.item].url
+            albumCell.photoUrl = URL(string: urlString)
+            return albumCell
+        } else {
+            return cell
+        }
     }
-    
     
 }
