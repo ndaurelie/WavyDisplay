@@ -328,20 +328,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPa-rc-goI">
-                                <rect key="frame" x="8" y="52" width="374" height="79"/>
+                                <rect key="frame" x="8" y="52" width="374" height="91"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woz-ZC-9C3">
-                                        <rect key="frame" x="2" y="1" width="370" height="50"/>
+                                        <rect key="frame" x="2" y="1" width="370" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="HHW-rm-BF6"/>
+                                            <constraint firstAttribute="height" constant="45" id="HHW-rm-BF6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bv9-Sl-JRr">
-                                        <rect key="frame" x="5" y="51" width="364" height="26"/>
+                                        <rect key="frame" x="5" y="46" width="364" height="43"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -352,11 +352,11 @@
                                 <constraints>
                                     <constraint firstItem="Bv9-Sl-JRr" firstAttribute="leading" secondItem="cPa-rc-goI" secondAttribute="leading" constant="5" id="4ae-1l-row"/>
                                     <constraint firstAttribute="trailing" secondItem="woz-ZC-9C3" secondAttribute="trailing" constant="2" id="7AZ-fy-6Gl"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bv9-Sl-JRr" secondAttribute="bottom" constant="2" id="AJI-jq-JQ8"/>
                                     <constraint firstAttribute="trailing" secondItem="Bv9-Sl-JRr" secondAttribute="trailing" constant="5" id="Okf-XX-O7t"/>
                                     <constraint firstItem="woz-ZC-9C3" firstAttribute="top" secondItem="cPa-rc-goI" secondAttribute="top" constant="1" id="UHE-0R-jqE"/>
                                     <constraint firstItem="Bv9-Sl-JRr" firstAttribute="top" secondItem="woz-ZC-9C3" secondAttribute="bottom" id="ekP-90-d2S"/>
                                     <constraint firstItem="woz-ZC-9C3" firstAttribute="leading" secondItem="cPa-rc-goI" secondAttribute="leading" constant="2" id="ftd-jY-gbU"/>
-                                    <constraint firstAttribute="bottom" secondItem="Bv9-Sl-JRr" secondAttribute="bottom" constant="2" id="k7A-1X-TpD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
@@ -366,7 +366,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phZ-Bq-fte">
-                                <rect key="frame" x="8" y="139" width="374" height="284"/>
+                                <rect key="frame" x="8" y="151" width="374" height="272"/>
                                 <connections>
                                     <segue destination="XQn-2B-XWZ" kind="embed" identifier="DisplayCommentsSegue" id="Ojr-gb-O6F"/>
                                 </connections>
@@ -379,7 +379,7 @@
                             <constraint firstItem="phZ-Bq-fte" firstAttribute="leading" secondItem="XBN-C7-0Ye" secondAttribute="leading" constant="8" id="G0k-iV-LbR"/>
                             <constraint firstAttribute="bottom" secondItem="phZ-Bq-fte" secondAttribute="bottom" constant="8" id="KVl-1o-DWO"/>
                             <constraint firstItem="cPa-rc-goI" firstAttribute="top" secondItem="XBN-C7-0Ye" secondAttribute="top" constant="8" id="Sv1-c7-6Lo"/>
-                            <constraint firstItem="cPa-rc-goI" firstAttribute="bottom" secondItem="XBN-C7-0Ye" secondAttribute="bottom" multiplier="0.33" id="Xkm-zx-IzA"/>
+                            <constraint firstItem="cPa-rc-goI" firstAttribute="bottom" secondItem="XBN-C7-0Ye" secondAttribute="bottom" multiplier="0.36" id="Xkm-zx-IzA"/>
                             <constraint firstItem="XBN-C7-0Ye" firstAttribute="trailing" secondItem="cPa-rc-goI" secondAttribute="trailing" constant="8" id="m9U-z6-gbb"/>
                             <constraint firstItem="XBN-C7-0Ye" firstAttribute="trailing" secondItem="phZ-Bq-fte" secondAttribute="trailing" constant="8" id="q8W-r0-K5H"/>
                         </constraints>
@@ -399,11 +399,11 @@
             <objects>
                 <viewController id="XQn-2B-XWZ" customClass="OnlyCommentsViewController" customModule="WavyDisplay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbr-2w-4zg">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="284"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="snN-Lk-gVm">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="284"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="272"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PGU-hr-svR">
                                     <size key="itemSize" width="372" height="104"/>

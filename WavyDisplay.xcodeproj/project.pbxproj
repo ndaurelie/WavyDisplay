@@ -123,6 +123,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		527F841C22BA45DF0045E58D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				527F83F922B8E38F0045E58D /* Company.swift */,
+				527F83FD22B8E4060045E58D /* Address.swift */,
+				527F83FF22B8E44B0045E58D /* User.swift */,
+				527F83FB22B8E3C30045E58D /* Geo.swift */,
+				527F840722B90F9C0045E58D /* Album.swift */,
+				527F840922B913A70045E58D /* Photo.swift */,
+				527F840F22B93B810045E58D /* Post.swift */,
+				527F841122B93BE90045E58D /* Comment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		527F841D22BA49F30045E58D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				527F841E22BA4A160045E58D /* List of users */,
+				527F841F22BA4A4E0045E58D /* Albums and posts */,
+				527F842022BA4A680045E58D /* Comments of a post */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		527F841E22BA4A160045E58D /* List of users */ = {
+			isa = PBXGroup;
+			children = (
+				527F83F722B8E1D90045E58D /* ListUsersViewController.swift */,
+			);
+			path = "List of users";
+			sourceTree = "<group>";
+		};
+		527F841F22BA4A4E0045E58D /* Albums and posts */ = {
+			isa = PBXGroup;
+			children = (
+				527F840D22B936830045E58D /* AlbumsHeaderView.swift */,
+				527F841322B943CC0045E58D /* PostCollectionViewCell.swift */,
+				527F840522B90EC70045E58D /* PostsViewController.swift */,
+				527F840322B8ED240045E58D /* AlbumsViewController.swift */,
+				527F840B22B92A840045E58D /* PhotoCollectionViewCell.swift */,
+				527F840122B8EA290045E58D /* UserContentViewController.swift */,
+			);
+			path = "Albums and posts";
+			sourceTree = "<group>";
+		};
+		527F842022BA4A680045E58D /* Comments of a post */ = {
+			isa = PBXGroup;
+			children = (
+				527F841922BA1D360045E58D /* CommentCollectionViewCell.swift */,
+				527F841722BA147B0045E58D /* OnlyCommentsViewController.swift */,
+				527F841522B98D4A0045E58D /* PostCommentsViewController.swift */,
+			);
+			path = "Comments of a post";
+			sourceTree = "<group>";
+		};
 		52C788F922B8D40B00E518B2 = {
 			isa = PBXGroup;
 			children = (
@@ -149,25 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				52C7890522B8D40B00E518B2 /* AppDelegate.swift */,
-				527F83F722B8E1D90045E58D /* ListUsersViewController.swift */,
-				527F83F922B8E38F0045E58D /* Company.swift */,
-				527F83FD22B8E4060045E58D /* Address.swift */,
-				527F83FF22B8E44B0045E58D /* User.swift */,
-				527F83FB22B8E3C30045E58D /* Geo.swift */,
+				527F841D22BA49F30045E58D /* Scenes */,
+				527F841C22BA45DF0045E58D /* Model */,
 				52C7890922B8D40B00E518B2 /* Main.storyboard */,
-				527F841922BA1D360045E58D /* CommentCollectionViewCell.swift */,
-				527F841722BA147B0045E58D /* OnlyCommentsViewController.swift */,
-				527F841522B98D4A0045E58D /* PostCommentsViewController.swift */,
-				527F840D22B936830045E58D /* AlbumsHeaderView.swift */,
-				527F840722B90F9C0045E58D /* Album.swift */,
-				527F841322B943CC0045E58D /* PostCollectionViewCell.swift */,
-				527F840922B913A70045E58D /* Photo.swift */,
-				527F840522B90EC70045E58D /* PostsViewController.swift */,
-				527F840322B8ED240045E58D /* AlbumsViewController.swift */,
-				527F840F22B93B810045E58D /* Post.swift */,
-				527F841122B93BE90045E58D /* Comment.swift */,
-				527F840B22B92A840045E58D /* PhotoCollectionViewCell.swift */,
-				527F840122B8EA290045E58D /* UserContentViewController.swift */,
 				52C7890C22B8D40C00E518B2 /* Assets.xcassets */,
 				52C7890E22B8D40C00E518B2 /* LaunchScreen.storyboard */,
 				52C7891122B8D40C00E518B2 /* Info.plist */,
