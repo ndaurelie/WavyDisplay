@@ -247,6 +247,9 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW4-gK-Lur">
                                                     <rect key="frame" x="13" y="36" width="361" height="130"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -257,16 +260,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtz-8q-Ag1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="387" height="180"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="0.94656999143835618" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="GW4-gK-Lur" firstAttribute="top" secondItem="UPd-t6-Mwd" secondAttribute="bottom" id="90y-Nf-OOb"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="UPd-t6-Mwd" secondAttribute="trailing" constant="12" id="N9L-YG-vol"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xtz-8q-Ag1" secondAttribute="bottom" id="NBV-A4-n5n"/>
                                             <constraint firstItem="GW4-gK-Lur" firstAttribute="leading" secondItem="vhH-lM-dzl" secondAttribute="leadingMargin" constant="5" id="Pp3-F1-PiN"/>
                                             <constraint firstItem="UPd-t6-Mwd" firstAttribute="leading" secondItem="vhH-lM-dzl" secondAttribute="leadingMargin" constant="5" id="R03-CW-aHn"/>
                                             <constraint firstItem="UPd-t6-Mwd" firstAttribute="top" secondItem="vhH-lM-dzl" secondAttribute="topMargin" constant="4" id="RVL-Xi-n4x"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xtz-8q-Ag1" secondAttribute="trailing" id="UXz-4e-52K"/>
+                                            <constraint firstItem="Xtz-8q-Ag1" firstAttribute="leading" secondItem="vhH-lM-dzl" secondAttribute="leading" id="ojP-Tp-n15"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="GW4-gK-Lur" secondAttribute="trailing" constant="5" id="qMp-qQ-Ps5"/>
+                                            <constraint firstItem="Xtz-8q-Ag1" firstAttribute="top" secondItem="vhH-lM-dzl" secondAttribute="top" id="sN5-f6-4sz"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="GW4-gK-Lur" secondAttribute="bottom" constant="5" id="tjE-Ge-MH8"/>
                                         </constraints>
                                         <size key="customSize" width="387" height="180"/>
