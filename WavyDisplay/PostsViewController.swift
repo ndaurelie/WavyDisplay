@@ -14,7 +14,6 @@ class PostsViewController: UIViewController {
     struct Constant {
         static let commonBaseUrl = "https://jsonplaceholder.typicode.com"
         static let pathForPostsByUserHavingUserId = "/posts?userId="
-        static let pathForCommentsAboutPostHavingPostId = "/comments?postId="
     }
     
     var currentUser: User?
@@ -58,19 +57,24 @@ class PostsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowPostCommentsSegue" {
+            if let commentsVC = segue.destination as? PostCommentsViewController {
+                if let chosenPost = sender as? Post {
+                    commentsVC.currentPost = chosenPost
+                }
+            }
+        }
     }
-    */
 
 }
 
 extension PostsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    // MARK: - Collection View Data Source
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -96,6 +100,8 @@ extension PostsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
     }
     
+    // MARK: - Collection View Layout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let postsCollectionViewWidth = collectionView.frame.width
         
@@ -105,7 +111,18 @@ extension PostsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             width = postsCollectionViewWidth - 10
         }
         
-        return CGSize(width: width, height: 150)
+        return CGSize(width: width, height: 180)
+    }
+    
+    // MARK: - Selection of a post
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if postsOfThisUser != nil {
+            let selectedPost = postsOfThisUser![indexPath.item]
+            
+            performSegue(withIdentifier: "ShowPostCommentsSegue", sender: selectedPost)
+        }
+        
     }
     
 }
