@@ -114,15 +114,19 @@ class AlbumsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "DisplayThisPhoto" {
+            if let chosenPhoto = sender as? Photo {
+                if let onePhotoVC = segue.destination as? OnePhotoViewController {
+                    onePhotoVC.thisPhoto = chosenPhoto
+                }
+            }
+        }
     }
-    */
+    
 
 }
 
@@ -166,6 +170,16 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
             
         } else {
             assert(false, "Invalid element type")
+        }
+    }
+    
+    // MARK: - Selection of a photo
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if photosByAlbum != nil {
+            let selectedPhoto = photosByAlbum[indexPath.section].photos[indexPath.item]
+            
+            performSegue(withIdentifier: "DisplayThisPhoto", sender: selectedPhoto)
         }
     }
     
