@@ -33,6 +33,7 @@
 		52C7891022B8D40C00E518B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C7890E22B8D40C00E518B2 /* LaunchScreen.storyboard */; };
 		52C7891B22B8D40C00E518B2 /* WavyDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7891A22B8D40C00E518B2 /* WavyDisplayTests.swift */; };
 		52C7892622B8D40C00E518B2 /* WavyDisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7892522B8D40C00E518B2 /* WavyDisplayUITests.swift */; };
+		52E1E14722BB6E1000512EA8 /* NewCommentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1E14622BB6E1000512EA8 /* NewCommentFormViewController.swift */; };
 		BE55B3FF747374CBA79F3195 /* Pods_WavyDisplayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62FA1C9BD5AC4F9916FB1E5 /* Pods_WavyDisplayTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		52C7892122B8D40C00E518B2 /* WavyDisplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WavyDisplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C7892522B8D40C00E518B2 /* WavyDisplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyDisplayUITests.swift; sourceTree = "<group>"; };
 		52C7892722B8D40C00E518B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E1E14622BB6E1000512EA8 /* NewCommentFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentFormViewController.swift; sourceTree = "<group>"; };
 		961D2C9E64C9798EE88722D2 /* Pods-WavyDisplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WavyDisplay.release.xcconfig"; path = "Target Support Files/Pods-WavyDisplay/Pods-WavyDisplay.release.xcconfig"; sourceTree = "<group>"; };
 		A62FA1C9BD5AC4F9916FB1E5 /* Pods_WavyDisplayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WavyDisplayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88915396B5DDAF60C8C52CE /* Pods-WavyDisplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WavyDisplay.debug.xcconfig"; path = "Target Support Files/Pods-WavyDisplay/Pods-WavyDisplay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				527F841E22BA4A160045E58D /* List of users */,
 				527F841F22BA4A4E0045E58D /* Albums and posts */,
 				527F842022BA4A680045E58D /* Comments of a post */,
+				52E1E14822BB794C00512EA8 /* Add new comment */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -231,6 +234,14 @@
 				52C7892722B8D40C00E518B2 /* Info.plist */,
 			);
 			path = WavyDisplayUITests;
+			sourceTree = "<group>";
+		};
+		52E1E14822BB794C00512EA8 /* Add new comment */ = {
+			isa = PBXGroup;
+			children = (
+				52E1E14622BB6E1000512EA8 /* NewCommentFormViewController.swift */,
+			);
+			path = "Add new comment";
 			sourceTree = "<group>";
 		};
 		6BF71AEC663781A5E2A13E74 /* Pods */ = {
@@ -490,6 +501,7 @@
 				527F840022B8E44B0045E58D /* User.swift in Sources */,
 				527F83FA22B8E38F0045E58D /* Company.swift in Sources */,
 				527F83FC22B8E3C30045E58D /* Geo.swift in Sources */,
+				52E1E14722BB6E1000512EA8 /* NewCommentFormViewController.swift in Sources */,
 				527F840A22B913A70045E58D /* Photo.swift in Sources */,
 				527F841222B93BE90045E58D /* Comment.swift in Sources */,
 				527F840222B8EA290045E58D /* UserContentViewController.swift in Sources */,

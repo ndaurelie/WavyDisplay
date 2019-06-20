@@ -16,6 +16,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     var photoUrl: URL! {
         didSet {
+            // Show a UIActivityIndicatorView in center of image view while downloading.
+            photoImageView.kf.indicatorType = .activity
+            
+            // Download the image from url, send it to both memory cache and disk cache, and display it in imageView.
             photoImageView.kf.setImage(with: photoUrl)
         }
     }

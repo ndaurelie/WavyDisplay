@@ -7,19 +7,10 @@
 //
 
 import UIKit
-import Alamofire
 
 class PostCommentsViewController: UIViewController {
     
-    struct Constant {
-        static let baseUrlString = "https://jsonplaceholder.typicode.com"
-        static let pathForPostHavingPostId = "/posts/"
-        static let pathForAllComments = "/comments"
-    }
-    
     var currentPost: Post?
-    
-    var commentsForThisPost: [Comment]?
 
     // MARK: - Outlets
     
@@ -48,81 +39,7 @@ class PostCommentsViewController: UIViewController {
     @objc func addTapped() {
         print("I should propose to add a comment")
         
-        let messageString = "Add a comment"
-        let titlePlaceholderString = "Title of the comment"
-        let emailPlaceholderString = "Your email"
-        let bodyPlaceholderString = "Your comment"
-        
-        let addCommentController = UIAlertController(title: nil, message: messageString, preferredStyle: .alert)
-        
-        addCommentController.addTextField(configurationHandler: { (titleTextField: UITextField!) in
-            titleTextField.borderStyle = .roundedRect
-            titleTextField.text = titlePlaceholderString
-            titleTextField.clearButtonMode = .always
-            titleTextField.autocapitalizationType = .sentences
-        })
-        addCommentController.addTextField(configurationHandler: { (emailTextField: UITextField!) in
-            emailTextField.borderStyle = .roundedRect
-            emailTextField.text = emailPlaceholderString
-            emailTextField.clearButtonMode = .always
-            emailTextField.autocapitalizationType = .sentences
-        })
-        addCommentController.addTextField(configurationHandler: { (bodyTextField: UITextField!) in
-            bodyTextField.borderStyle = .roundedRect
-            bodyTextField.text = bodyPlaceholderString
-            bodyTextField.clearButtonMode = .always
-            bodyTextField.autocapitalizationType = .sentences
-        })
-        
-        let postCommentAction = UIAlertAction(title: "Add", style: .default, handler: { [unowned self] action in
-            
-            var titleForComment = ""
-            var emailForComment = ""
-            var bodyForComment = ""
-            if let newTitle = addCommentController.textFields![0].text {
-                titleForComment = newTitle
-            }
-            if let newEmail = addCommentController.textFields![1].text {
-                emailForComment = newEmail
-            }
-            if let newBody = addCommentController.textFields![2].text {
-                bodyForComment = newBody
-            }
-            print("I should post this comment with title \(titleForComment), email \(emailForComment) and body: ", bodyForComment)
-            self.postNewComment(commentName: titleForComment, commentEmail: emailForComment, commentBody: bodyForComment)
-        })
-        
-        let cancelCommentAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
-            print("User cancelled posting a comment")
-        })
-        
-        addCommentController.addAction(postCommentAction)
-        addCommentController.addAction(cancelCommentAction)
-        
-        self.present(addCommentController, animated: true)
-    }
-    
-    func postNewComment(commentName: String, commentEmail: String, commentBody: String) {
-        if currentPost != nil {
-            let allCommentsString = Constant.baseUrlString + Constant.pathForAllComments
-            let parameters: Parameters = [
-                "postId": currentPost!.id,
-                "name": commentName,
-                "email": commentEmail,
-                "body": commentBody
-                ]
-            Alamofire.request(allCommentsString, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    print("Success for post request: ", value)
-                case .failure(let error):
-                    print("Failure for post request: ", error)
-                }
-            }
-            
-        } else {
-            print("Current post was nil: comment was not added.")
-        }
+        performSegue(withIdentifier: "DisplayFormToEnterComment", sender: nil)
         
     }
     
@@ -133,6 +50,12 @@ class PostCommentsViewController: UIViewController {
         if segue.identifier == "DisplayCommentsSegue" {
             if let onlyCommentsVC = segue.destination as? OnlyCommentsViewController {
                 onlyCommentsVC.displayedPost = currentPost
+            }
+        }
+        if segue.identifier == "DisplayFormToEnterComment" {
+            print("Current post id is: ", currentPost?.id ?? "post is nil")
+            if let formVC = segue.destination as? NewCommentFormViewController {
+                formVC.commentedPost = currentPost
             }
         }
     }

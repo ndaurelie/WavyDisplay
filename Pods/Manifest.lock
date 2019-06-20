@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Eureka (5.0.0)
+  - Kingfisher (5.6.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - Eureka (~> 5.0)
+  - Kingfisher (~> 5.0)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Eureka
+    - Kingfisher
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
+  Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 7a08d4ba61122e21c339114a35be415310da513f
+
+COCOAPODS: 1.7.1

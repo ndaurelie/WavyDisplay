@@ -1,0 +1,6 @@
+framework module Pods_WavyDisplay {
+  umbrella header "Pods-WavyDisplay-umbrella.h"
+
+  export *
+  module * { export * }
+}

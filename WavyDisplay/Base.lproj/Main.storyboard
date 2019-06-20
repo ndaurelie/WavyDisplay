@@ -245,7 +245,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW4-gK-Lur">
-                                                    <rect key="frame" x="13" y="36" width="361" height="130"/>
+                                                    <rect key="frame" x="13" y="36" width="360" height="130"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -388,11 +388,27 @@
                     <connections>
                         <outlet property="postBodyTextView" destination="Bv9-Sl-JRr" id="BRh-nf-UEv"/>
                         <outlet property="postTitleLabel" destination="woz-ZC-9C3" id="dgn-gG-kme"/>
+                        <segue destination="jJK-Ba-9KZ" kind="show" identifier="DisplayFormToEnterComment" id="vcU-vk-gxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xU-Ti-g4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3615.9420289855075" y="113.50446428571428"/>
+        </scene>
+        <!--New Comment Form View Controller-->
+        <scene sceneID="d3i-Ue-vQK">
+            <objects>
+                <viewController id="jJK-Ba-9KZ" customClass="NewCommentFormViewController" customModule="WavyDisplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wdi-9D-dH7">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wQn-OK-C1X"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rc7-5w-M03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4768" y="-93"/>
         </scene>
         <!--Only Comments View Controller-->
         <scene sceneID="kfv-ff-eiC">
@@ -478,6 +494,7 @@
                             <constraint firstAttribute="bottom" secondItem="snN-Lk-gVm" secondAttribute="bottom" id="Lgh-Gj-CnA"/>
                             <constraint firstItem="snN-Lk-gVm" firstAttribute="top" secondItem="gbr-2w-4zg" secondAttribute="top" id="OgT-EF-vt4"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="2iI-Ia-MJi"/>
                     </view>
                     <connections>
                         <outlet property="commentsCollectionView" destination="snN-Lk-gVm" id="n5T-MG-NhI"/>
@@ -485,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rK1-h2-dBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4360.8695652173919" y="113.83928571428571"/>
+            <point key="canvasLocation" x="4374" y="190"/>
         </scene>
     </scenes>
 </document>
